@@ -20,6 +20,7 @@ public class GetPostsTest {
             .get("/posts")
             .then()
             .statusCode(200)
+                .header("Content-Type", containsString("application/json"))
             .body("size()", greaterThan(0));
     }
 
@@ -30,8 +31,11 @@ public class GetPostsTest {
             .get("/posts/1")
             .then()
             .statusCode(200)
+                .header("Content-Type", containsString("application/json"))
             .body("id", equalTo(1))
-            .body("userId", equalTo(1));
+            .body("userId", equalTo(1))
+                .body("title", notNullValue())
+                .body("body", notNullValue());
     }
 
     @Test

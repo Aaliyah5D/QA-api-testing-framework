@@ -1,0 +1,15 @@
+```text
+# IntelliJ IDEA
+.idea/
+*.iml
+
+# Maven
+target/
+
+# Compiled files
+*.class
+
+# Operating system files
+.DS_Store
+Thumbs.db
+```
