@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>QA API Testing Dashboard</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="container">
+
+    <!-- HEADER -->
+    <header class="header">
+
+        <div>
+            <p class="eyebrow">API AUTOMATION PROJECT</p>
+
+            <h1>QA API Testing Dashboard</h1>
+
+            <p class="subtitle">
+                Interactive dashboard for testing REST API endpoints
+            </p>
+        </div>
+
+        <div class="api-status">
+            <span class="status-dot"></span>
+            API ONLINE
+        </div>
+
+    </header>
+
+
+    <!-- MAIN CONTENT -->
+    <main class="dashboard">
+
+        <!-- TEST CASES -->
+        <section class="card">
+
+            <div class="section-header">
+
+                <div>
+                    <h2>API Test Scenarios</h2>
+
+                    <p>
+                        Select an endpoint to execute an API request.
+                    </p>
+                </div>
+
+            </div>
+
+
+            <div class="test-list">
+
+                <div class="test-item">
+
+                    <div class="test-info">
+
+                        <span class="method get">GET</span>
+
+                        <div>
+                            <strong>Get All Posts</strong>
+                            <small>/posts</small>
+                        </div>
+
+                    </div>
+
+                    <button onclick="runTest('getAllPosts')">
+                        TEST
+                    </button>
+
+                </div>
+
+
+                <div class="test-item">
+
+                    <div class="test-info">
+
+                        <span class="method get">GET</span>
+
+                        <div>
+                            <strong>Get Post #1</strong>
+                            <small>/posts/1</small>
+                        </div>
+
+                    </div>
+
+                    <button onclick="runTest('getSinglePost')">
+                        TEST
+                    </button>
+
+                </div>
+
+
+                <div class="test-item">
+
+                    <div class="test-info">
+
+                        <span class="method get">GET</span>
+
+                        <div>
+                            <strong>Invalid Post</strong>
+                            <small>/posts/999999</small>
+                        </div>
+
+                    </div>
+
+                    <button onclick="runTest('invalidPost')">
+                        TEST
+                    </button>
+
+                </div>
+
+
+                <div class="test-item">
+
+                    <div class="test-info">
+
+                        <span class="method post">POST</span>
+
+                        <div>
+                            <strong>Create Post</strong>
+                            <small>/posts</small>
+                        </div>
+
+                    </div>
+
+                    <button onclick="runTest('createPost')">
+                        TEST
+                    </button>
+
+                </div>
+
+
+                <div class="test-item">
+
+                    <div class="test-info">
+
+                        <span class="method put">PUT</span>
+
+                        <div>
+                            <strong>Update Post</strong>
+                            <small>/posts/1</small>
+                        </div>
+
+                    </div>
+
+                    <button onclick="runTest('updatePost')">
+                        TEST
+                    </button>
+
+                </div>
+
+
+                <div class="test-item">
+
+                    <div class="test-info">
+
+                        <span class="method delete">DELETE</span>
+
+                        <div>
+                            <strong>Delete Post</strong>
+                            <small>/posts/1</small>
+                        </div>
+
+                    </div>
+
+                    <button onclick="runTest('deletePost')">
+                        TEST
+                    </button>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- RESULT -->
+        <section class="card result-card">
+
+            <div class="section-header">
+
+                <div>
+
+                    <p class="eyebrow">LATEST REQUEST</p>
+
+                    <h2 id="testName">
+                        No test executed
+                    </h2>
+
+                </div>
+
+                <div id="resultBadge" class="result-badge neutral">
+                    WAITING
+                </div>
+
+            </div>
+
+
+            <div class="result-details">
+
+                <div class="detail">
+
+                    <span>METHOD</span>
+
+                    <strong id="resultMethod">
+                        —
+                    </strong>
+
+                </div>
+
+
+                <div class="detail">
+
+                    <span>ENDPOINT</span>
+
+                    <strong id="resultEndpoint">
+                        —
+                    </strong>
+
+                </div>
+
+
+                <div class="detail">
+
+                    <span>STATUS</span>
+
+                    <strong id="resultStatus">
+                        —
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+            <div class="response-section">
+
+                <div class="response-header">
+
+                    <h3>Response Body</h3>
+
+                    <button
+                            class="copy-button"
+                            onclick="copyResponse()">
+                        COPY
+                    </button>
+
+                </div>
+
+                <pre id="responseBody">Run a test to see the API response.</pre>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- FOOTER -->
+    <footer>
+
+        <p>
+            Built with HTML, CSS & JavaScript
+            · QA API Testing Framework
+        </p>
+
+    </footer>
+
+</div>
+
+
+<script src="script.js"></script>
+
+</body>
+</html>
