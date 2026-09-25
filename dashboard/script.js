@@ -260,10 +260,6 @@ function getExpectedStatus(testType) {
 }
 
 
-/*
-    Copy response to clipboard
-*/
-
 function copyResponse() {
 
     const response =
